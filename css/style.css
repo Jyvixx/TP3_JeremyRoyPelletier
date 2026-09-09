@@ -1,0 +1,37 @@
+*{ box-sizing: border-box;}
+
+
+/* Typographies / Couleurs (exemples : titres, paragraphes, liens, etc.)
+========================================================================== */
+
+body{
+	background-color: aliceblue;
+}
+
+/* Mise en page (positionnement)
+========================================================================== */
+
+.container{
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+/* Header / Navigations / Footer 
+========================================================================== */
+
+
+
+/* Composantes générales (exemples : section, cartes, tableaux, etc.)
+========================================================================== */
+
+
+
+/* Formulaires
+========================================================================== */
+
+
+
+/* Règles spécifiques aux pages
+========================================================================== */
