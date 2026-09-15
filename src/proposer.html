@@ -15,38 +15,210 @@
   </head>
 
   <body>
-    <main>
-      <header>
-        <nav>
-          <div>
-            <a href="index.html">
-              <img src="" alt="" />
-            </a>
-          </div>
-          <div>
-            <ul>
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="activites.html">Activités</a></li>
-              <li><a href="evenements.html">Événements</a></li>
-              <li><a href="proposer.html">Proposer</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+    <header>
+      <nav>
+        <div>
+          <a href="index.html"><h1>TRouvé</h1></a>
+        </div>
+        <div>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="activites.html">Activités</a></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><a href="proposer.html">Proposer</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-      <!-- Introduction -->
-      <div class="container">
-        <section></section>
-        <p>Proposer une activité</p>
+    <!-- Introduction -->
+    <main class="container">
+      <section>
+        <h2>Faites découvrir vos idées à la communauté !</h2>
 
-        <!-- Formulaire -->
-        <section></section>
+        <p>
+          Vous connaissez une activité, un événement, un restaurant, un endroit
+          ou une expérience intéressante à Trois-Rivières qui n'est pas encore
+          présent sur TRouvé ? Partagez-le avec nous !
+        </p>
 
-        <!-- Informations supplémentaires / FAQ -->
-        <section></section>
-      </div>
+        <p>
+          Cette page vous permet de proposer facilement une nouvelle activité ou
+          un événement afin de contribuer à enrichir notre répertoire. Que ce
+          soit un événement spécial, une activité saisonnière, une sortie entre
+          amis ou un endroit méconnu qui mérite d'être découvert, toutes les
+          suggestions sont les bienvenues.
+        </p>
 
-      <footer></footer>
+        <p>
+          Remplissez simplement le formulaire avec les informations nécessaires
+          concernant votre proposition. Après vérification, celle-ci pourra être
+          ajoutée au site afin que d'autres utilisateurs puissent également la
+          découvrir.
+        </p>
+
+        <p>
+          Votre suggestion pourrait être la prochaine découverte des
+          utilisateurs de TRouvé !
+        </p>
+      </section>
+
+      <!-- Formulaire -->
+      <section>
+        <h2>Remplissez notre formulaire !</h2>
+        <form id="form" method="get" action="confirmation.html" novalidate>
+          <!-- Section informations sur l'activité -->
+          <fieldset>
+            <legend>Quel est cette activité / événement ?</legend>
+            <!-- Nom -->
+            <div class="input-control">
+              <label for="nomActiEve"
+                >Nom de l'activité ou de l'événement <span>*</span></label
+              >
+              <input type="text" id="nomActiEve" name="nomActiEve" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Description -->
+            <div class="input-control">
+              <label for="description">Description courte <span>*</span></label>
+              <textarea id="description" name="description"></textarea>
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Catégorie -->
+            <div class="input-control">
+              <label for="categorie">Catégorie <span>*</span></label>
+              <select id="categorie" name="categorie">
+                <option value="" selected>- Faire un choix -</option>
+                <option value="culturelle">Culture et patrimoine</option>
+                <option value="sportive">Plein air et sportif</option>
+                <option value="artistique">
+                  Divertissement et centre-ville
+                </option>
+                <option value="autre">Autre</option>
+              </select>
+              <div class="errorMessage"></div>
+            </div>
+          </fieldset>
+
+          <!-- Section sur  -->
+          <fieldset>
+            <legend>Informations sur l'activité / événement</legend>
+            <!-- Nom du lieu -->
+            <div class="input-control">
+              <label for="nomLieu">Nom du lieu <span>*</span></label>
+              <input type="text" id="nomLieu" name="nomLieu" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Adresse -->
+            <div class="input-control">
+              <label for="adresse">Adresse <span>*</span></label>
+              <input type="text" id="adresse" name="adresse" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Date de l'activité -->
+            <div class="input-control">
+              <label for="dateActivite"
+                >Date de l'activité <span>*</span></label
+              >
+              <input type="date" id="dateActivite" name="dateActivite" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Activité gratuite -->
+            <div class="input-control">
+              <label for="gratuit"
+                >L'activité est-elle gratuite ? <span>*</span></label
+              >
+              <select id="gratuit" name="gratuit">
+                <option value="" selected>- Faire un choix -</option>
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+              </select>
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Prix -->
+            <div class="input-control">
+              <label for="prix"
+                >Si non, quel est le prix de l'activité ? <span>*</span></label
+              >
+              <input type="number" id="prix" name="prix" placeholder="0.00$" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Âge recommandé -->
+            <div class="input-control">
+              <label for="ageRecommande">Âge recommandé <span>*</span></label>
+              <select id="ageRecommande" name="ageRecommande">
+                <option value="" selected>- Faire un choix -</option>
+                <option value="0-5">0-5 ans</option>
+                <option value="6-12">6-12 ans</option>
+                <option value="13-17">13-17 ans</option>
+                <option value="18+">18 ans et +</option>
+              </select>
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Site web -->
+            <div class="input-control">
+              <label for="siteWeb">Site web (facultatif)</label>
+              <input type="url" id="siteWeb" name="siteWeb" />
+              <div class="errorMessage"></div>
+            </div>
+          </fieldset>
+
+          <!-- Section du contact -->
+          <fieldset>
+            <legend>Personne à contacter</legend>
+            <!-- Prénom et nom -->
+            <div class="input-control">
+              <label for="prenomProp">Prénom du proposant <span>*</span></label>
+              <input type="text" id="prenomProp" name="prenomProp" />
+              <div class="errorMessage"></div>
+            </div>
+            <div class="input-control">
+              <label for="nomProp">Nom du proposant <span>*</span></label>
+              <input type="text" id="nomProp" name="nomProp" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Courriel -->
+            <div class="input-control">
+              <label for="courriel">Courriel<span>*</span></label>
+              <input type="email" id="courriel" name="courriel" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Téléphone -->
+            <div class="input-control">
+              <label for="telephone">Téléphone (facultatif)</label>
+              <input type="tel" id="telephone" name="telephone" />
+              <div class="errorMessage"></div>
+            </div>
+
+            <!-- Conditions d'utilisation -->
+            <div class="input-control">
+              <label for="conditions">
+                J'accepte les conditions d'utilisation <span>*</span>
+              </label>
+              <input type="checkbox" id="conditions" name="conditions" />
+              <div class="errorMessage"></div>
+            </div>
+          </fieldset>
+
+          <!-- Bouton de soumission -->
+          <input type="submit" value="Soumettre" />
+        </form>
+      </section>
+
+      <!-- Informations supplémentaires / FAQ -->
+      <section></section>
     </main>
+
+    <footer></footer>
   </body>
 </html>
