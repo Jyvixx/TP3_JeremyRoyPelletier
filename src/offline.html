@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRouvé - Hors ligne</title>
+    <meta name="theme-color" content="#134e4a" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .offline-wrap {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background-color: var(--tr-cream-100);
+      }
+      .offline-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        color: var(--tr-teal-700);
+        margin-bottom: 1rem;
+      }
+      .offline-wrap h1 {
+        color: var(--tr-teal-900);
+        font-size: 1.5rem;
+        margin: 0 0 0.75rem;
+      }
+      .offline-wrap p {
+        color: var(--tr-ink-900);
+        max-width: 32rem;
+        line-height: 1.6;
+        margin: 0 0 1.5rem;
+      }
+      .offline-retry {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        font-weight: 600;
+        text-decoration: none;
+        background-color: var(--tr-amber-500);
+        color: var(--tr-teal-900);
+        cursor: pointer;
+        border: none;
+        font: inherit;
+      }
+      .offline-retry:hover {
+        background-color: var(--tr-amber-600);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="offline-wrap">
+      <svg class="offline-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 18.5h.01M8.5 15.5a5 5 0 0 1 7 0M5.5 12.3a9 9 0 0 1 13 0M2.5 9a13 13 0 0 1 19 0"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path d="M3 3l18 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      </svg>
+      <h1>Vous êtes hors ligne</h1>
+      <p>
+        Cette page n'a pas encore été mise en cache et une connexion Internet
+        est nécessaire pour la charger. Les pages déjà visitées restent
+        accessibles hors ligne.
+      </p>
+      <button class="offline-retry" onclick="location.reload()">Réessayer</button>
+    </div>
+  </body>
+</html>

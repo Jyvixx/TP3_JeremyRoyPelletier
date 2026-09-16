@@ -1,0 +1,44 @@
+{
+  "name": "TRouvé — Activités et événements à Trois-Rivières",
+  "short_name": "TRouvé",
+  "description": "Explorez facilement les activités, les événements et les endroits intéressants à Trois-Rivières.",
+  "id": "./index.html",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "fr-CA",
+  "dir": "ltr",
+  "background_color": "#f6f4ef",
+  "theme_color": "#134e4a",
+  "categories": ["lifestyle", "travel", "entertainment"],
+  "icons": [
+    {
+      "src": "icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/accueil-wide.png",
+      "sizes": "1920x911",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Page d'accueil de TRouvé sur ordinateur"
+    }
+  ]
+}
