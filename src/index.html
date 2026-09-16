@@ -12,91 +12,338 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
-    <header>
-      <nav>
+  <body class="bg-teal-50/40">
+    <header class="bg-teal-900">
+      <nav
+        class="container flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
-          <a href="index.html"><h1>TRouvé</h1></a>
+          <a href="index.html" class="inline-block no-underline">
+            <h1 class="text-2xl font-semibold tracking-tight text-white">
+              TRouvé
+            </h1>
+          </a>
         </div>
         <div>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="activites.html">Activités</a></li>
-            <li><a href="evenements.html">Événements</a></li>
-            <li><a href="proposer.html">Proposer</a></li>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 font-medium">
+            <li>
+              <a
+                href="index.html"
+                aria-current="page"
+                class="site-header__link site-header__link--active text-white"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="activites.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Activités</a
+              >
+            </li>
+            <li>
+              <a
+                href="evenements.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Événements</a
+              >
+            </li>
+            <li>
+              <a
+                href="proposer.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Proposer</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!-- Hero -->
-    <main class="container">
-      <section>
-        <h2>Bienvenue sur TRouvé !</h2>
-        <p>
-          TRouvé est un site web qui permet de découvrir facilement les
-          activités, les événements et les endroits intéressants à
-          Trois-Rivières. Le site regroupe au même endroit différentes sorties
-          et expériences à faire dans la ville, que ce soit pour se divertir,
-          manger, faire du sport, découvrir la culture ou simplement passer du
-          bon temps.
+    <main id="main" class="container">
+      <!-- Bannière -->
+      <section class="py-12 sm:py-16">
+        <p class="text-sm font-semibold uppercase tracking-wide text-amber-600">
+          Bienvenue
         </p>
-        <p>
-          L'objectif de TRouvé est de faciliter la recherche d'activités pour
-          les résidents et les visiteurs de Trois-Rivières. Les utilisateurs
-          peuvent parcourir différentes catégories, consulter les détails d'une
-          activité ou d'un événement et découvrir de nouveaux endroits à
-          proximité.
-        </p>
-        <p>
-          Grâce à une interface simple et conviviale, TRouvé devient un guide
-          local permettant de trouver quoi faire, où aller et quoi découvrir à
-          Trois-Rivières.
-        </p>
+        <h2
+          class="mt-2 max-w-2xl text-3xl font-semibold text-teal-900 sm:text-4xl"
+        >
+          Bienvenue sur TRouvé !
+        </h2>
+
+        <div class="mt-8 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p class="leading-relaxed text-slate-700">
+              TRouvé est un site web qui permet de découvrir facilement les
+              activités, les événements et les endroits intéressants à
+              Trois-Rivières. Le site regroupe au même endroit différentes
+              sorties et expériences à faire dans la ville, que ce soit pour
+              se divertir, manger, faire du sport, découvrir la culture ou
+              simplement passer du bon temps.
+            </p>
+            <p class="mt-4 leading-relaxed text-slate-700">
+              Grâce à une interface simple et conviviale, TRouvé devient un
+              guide local permettant de trouver quoi faire, où aller et quoi
+              découvrir à Trois-Rivières.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="activites.html" class="btn btn--primary"
+                >Voir les activités</a
+              >
+              <a href="evenements.html" class="btn btn--secondary"
+                >Voir les événements</a
+              >
+            </div>
+          </div>
+
+          <img
+            src="assets/Galette_Header.jpg"
+            alt="Rue animée du Vieux-Trois-Rivières"
+            class="aspect-video w-full rounded-lg object-cover shadow-md lg:aspect-[4/3]"
+          />
+        </div>
       </section>
+
+      <div class="text-teal-900/10" aria-hidden="true">
+        <svg
+          viewBox="0 0 1200 60"
+          class="wave-divider"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
 
       <!-- Activités populaires -->
-      <section>
-        <h2>Activités populaires</h2>
-        <ul>
-          <li>
-            Musée POP et Boréalis : Explorez l'histoire industrielle et la
-            culture de la région à travers des expositions uniques.
+      <section class="py-12">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <h2 class="text-2xl font-semibold text-teal-900">
+            Activités populaires
+          </h2>
+          <a
+            href="activites.html"
+            class="hidden text-sm font-semibold text-teal-700 hover:text-teal-900 sm:inline-block"
+            >Voir toutes les activités →</a
+          >
+        </div>
+
+        <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white p-6 shadow-sm"
+          >
+            <h3 class="text-lg font-semibold text-teal-900">
+              Musée POP et Boréalis
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-700">
+              Explorez l'histoire industrielle et la culture de la région à
+              travers des expositions uniques.
+            </p>
           </li>
-          <li>
-            Vieille prison de Trois-Rivières : Visitez cet ancien établissement
-            de détention pour une visite guidée saisissante.
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white p-6 shadow-sm"
+          >
+            <h3 class="text-lg font-semibold text-teal-900">
+              Vieille prison de Trois-Rivières
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-700">
+              Visitez cet ancien établissement de détention pour une visite
+              guidée saisissante.
+            </p>
           </li>
-          <li>
-            Amphithéâtre Cogeco : Assistez à des concerts extérieurs majeurs au
-            bord du fleuve Saint-Laurent.
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white p-6 shadow-sm sm:col-span-2 lg:col-span-1"
+          >
+            <h3 class="text-lg font-semibold text-teal-900">
+              Maïkan Aventure
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-slate-700">
+              Faites de la planche à pagaie, du kayak sur la rivière
+              Saint-Maurice ou de l'escalade, puis mangez sur leur terrasse.
+            </p>
           </li>
         </ul>
+
+        <div class="mt-6 text-center sm:hidden">
+          <a
+            href="activites.html"
+            class="text-sm font-semibold text-teal-700 hover:text-teal-900"
+            >Voir toutes les activités →</a
+          >
+        </div>
       </section>
 
+      <div class="text-teal-900/10" aria-hidden="true">
+        <svg
+          viewBox="0 0 1200 60"
+          class="wave-divider"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
       <!-- Événements populaires -->
-      <section>
-        <h2>Événements populaires</h2>
-        <ul>
-          <li>
-            <h3>FestiVoix de Trois-Rivières</h3>
-            Plus de 130 spectacles d'artistes internationaux et émergents sont
-            offerts sur 15 scènes pendant 9 jours de festivités.
+      <section class="py-12">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <h2 class="text-2xl font-semibold text-teal-900">
+            Événements populaires
+          </h2>
+          <a
+            href="evenements.html"
+            class="hidden text-sm font-semibold text-teal-700 hover:text-teal-900 sm:inline-block"
+            >Voir tous les événements →</a
+          >
+        </div>
+
+        <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/Martin-fontaine-Le-Memphis.jpg"
+              alt="Martin Fontaine jouant de la guitare sur scène"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Martin Fontaine - Sur la route de Memphis
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Jusqu'au 19 septembre 2026</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Memphis Cabaret</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Un souper-spectacle intime en hommage au Rock &amp; Soul, au
+                Blues et au Rock 'n' Roll des années 50 à 80.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Grand Prix de Trois-Rivières</h3>
-            Une course automobile urbaine historique de renommée internationale.
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/albatros26_fiche-spectacle.jpg"
+              alt="Fiche du Grand Événement Albatros"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Le Grand Événement Albatros
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Mercredi 16 septembre 2026 à 20 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Amphithéâtre Cogeco</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Spectacle-bénéfice réunissant Bruno Pelletier et Mélissa
+                Bédard au profit de la Fondation Albatros.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Festival international DANSEncore</h3>
-            Un festival d'envergure consacré à la danse sous toutes ses formes
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm sm:col-span-2 lg:col-span-1"
+          >
+            <img
+              src="assets/moffet26_fiche-spectacle.jpg"
+              alt="Fiche de spectacle d'Alicia Moffet"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Alicia Moffet
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Jeudi 19 novembre 2026 à 20 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Cabaret de l'Amphithéâtre Cogeco</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                La chanteuse pop québécoise présente son tout nouveau
+                spectacle dans une ambiance intime et chaleureuse.
+              </p>
+            </div>
           </li>
         </ul>
+
+        <div class="mt-6 text-center sm:hidden">
+          <a
+            href="evenements.html"
+            class="text-sm font-semibold text-teal-700 hover:text-teal-900"
+            >Voir tous les événements →</a
+          >
+        </div>
+      </section>
+
+      <!-- Appel à l'action : proposer -->
+      <section class="pb-16">
+        <div
+          class="rounded-lg bg-teal-900 p-8 text-center sm:flex sm:items-center sm:justify-between sm:p-10 sm:text-left"
+        >
+          <div>
+            <h2 class="text-2xl font-semibold text-white">
+              Vous connaissez une activité ou un événement à Trois-Rivières ?
+            </h2>
+            <p class="mt-2 max-w-xl text-teal-50/80">
+              Partagez-le avec la communauté TRouvé en remplissant notre
+              formulaire de proposition.
+            </p>
+          </div>
+          <a
+            href="proposer.html"
+            class="btn btn--primary mt-6 inline-block w-full sm:mt-0 sm:w-auto sm:flex-shrink-0"
+            >Proposer une activité</a
+          >
+        </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer class="mt-8 bg-teal-900">
+      <div
+        class="container flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold text-white">TRouvé</p>
+          <p class="text-sm text-teal-50/80">
+            Découvrez ce qui se passe à Trois-Rivières.
+          </p>
+        </div>
+        <p class="text-sm text-teal-50/70">
+          © 2026 TRouvé. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

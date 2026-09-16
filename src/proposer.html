@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr-CA">
+<html lang="fr-CA" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,61 +12,116 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
     <script src="script/validation.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
-  <body>
-    <header>
-      <nav>
+  <body class="bg-teal-50/40">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:font-medium focus:text-teal-900 focus:shadow-lg"
+      >Passer au contenu principal</a
+    >
+
+    <header class="bg-teal-900">
+      <nav
+        class="container flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
-          <a href="index.html"><h1>TRouvé</h1></a>
+          <a href="index.html" class="inline-block no-underline">
+            <h1 class="text-2xl font-semibold tracking-tight text-white">TRouvé</h1>
+          </a>
         </div>
         <div>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="activites.html">Activités</a></li>
-            <li><a href="evenements.html">Événements</a></li>
-            <li><a href="proposer.html">Proposer</a></li>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 font-medium">
+            <li>
+              <a href="index.html" class="site-header__link text-teal-50/90 hover:text-white"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a href="activites.html" class="site-header__link text-teal-50/90 hover:text-white"
+                >Activités</a
+              >
+            </li>
+            <li>
+              <a
+                href="evenements.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Événements</a
+              >
+            </li>
+            <li>
+              <a
+                href="proposer.html"
+                aria-current="page"
+                class="site-header__link site-header__link--active text-white"
+                >Proposer</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </header>
 
     <!-- Introduction -->
-    <main class="container">
-      <section>
-        <h2>Faites découvrir vos idées à la communauté !</h2>
+    <main id="main" class="container">
+      <section class="py-12 sm:py-16">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold text-teal-900 sm:text-4xl">
+            Faites découvrir vos idées à la communauté
+          </h2>
 
-        <p>
-          Vous connaissez une activité, un événement, un restaurant, un endroit
-          ou une expérience intéressante à Trois-Rivières qui n'est pas encore
-          présent sur TRouvé ? Partagez-le avec nous !
-        </p>
+          <div class="mt-6 space-y-4 leading-relaxed text-slate-700">
+            <p>
+              Vous connaissez une activité, un événement, un restaurant, un endroit
+              ou une expérience intéressante à Trois-Rivières qui n'est pas encore
+              présent sur TRouvé ? Partagez-le avec nous !
+            </p>
 
-        <p>
-          Cette page vous permet de proposer facilement une nouvelle activité ou
-          un événement afin de contribuer à enrichir notre répertoire. Que ce
-          soit un événement spécial, une activité saisonnière, une sortie entre
-          amis ou un endroit méconnu qui mérite d'être découvert, toutes les
-          suggestions sont les bienvenues.
-        </p>
+            <p>
+              Cette page vous permet de proposer facilement une nouvelle activité ou
+              un événement afin de contribuer à enrichir notre répertoire. Que ce
+              soit un événement spécial, une activité saisonnière, une sortie entre
+              amis ou un endroit méconnu qui mérite d'être découvert, toutes les
+              suggestions sont les bienvenues.
+            </p>
 
-        <p>
-          Remplissez simplement le formulaire avec les informations nécessaires
-          concernant votre proposition. Après vérification, celle-ci pourra être
-          ajoutée au site afin que d'autres utilisateurs puissent également la
-          découvrir.
-        </p>
+            <p>
+              Remplissez simplement le formulaire avec les informations nécessaires
+              concernant votre proposition. Après vérification, celle-ci pourra être
+              ajoutée au site afin que d'autres utilisateurs puissent également la
+              découvrir.
+            </p>
 
-        <p>
-          Votre suggestion pourrait être la prochaine découverte des
-          utilisateurs de TRouvé !
-        </p>
+            <p>
+              Votre suggestion pourrait être la prochaine découverte des
+              utilisateurs de TRouvé !
+            </p>
+          </div>
+        </div>
       </section>
 
+      <div class="text-teal-900/10" aria-hidden="true">
+        <svg viewBox="0 0 1200 60" class="wave-divider" preserveAspectRatio="none">
+          <path
+            d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
       <!-- Formulaire -->
-      <section>
-        <h2>Remplissez notre formulaire !</h2>
+      <section class="py-12">
+        <h2 class="mb-8 text-2xl font-semibold text-teal-900">
+          Remplissez notre formulaire !
+        </h2>
         <form
           id="formProposer"
           method="get"
@@ -74,28 +129,36 @@
           novalidate
         >
           <!-- Section courte description -->
-          <fieldset>
-            <legend>Quel est cette activité / événement ?</legend>
+          <fieldset class="panel">
+            <legend class="panel__title">
+              Quel est cette activité / événement ?
+            </legend>
+
             <!-- Nom -->
-            <div class="input-control">
-              <label for="nomActiEve"
-                >Nom de l'activité ou de l'événement <span>*</span></label
+            <div class="input-control field">
+              <label for="nomActiEve" class="field__label"
+                >Nom de l'activité ou de l'événement
+                <span class="field__required">*</span></label
               >
-              <input type="text" id="nomActiEve" name="nomActiEve" />
+              <input type="text" id="nomActiEve" name="nomActiEve" class="field__input" />
               <div class="errorMessage"></div>
             </div>
 
             <!-- Description -->
-            <div class="input-control">
-              <label for="description">Description courte <span>*</span></label>
-              <textarea id="description" name="description"></textarea>
+            <div class="input-control field">
+              <label for="description" class="field__label"
+                >Description courte <span class="field__required">*</span></label
+              >
+              <textarea id="description" name="description" rows="4" class="field__input"></textarea>
               <div class="errorMessage"></div>
             </div>
 
             <!-- Catégorie -->
-            <div class="input-control">
-              <label for="categorie">Catégorie <span>*</span></label>
-              <select id="categorie" name="categorie">
+            <div class="input-control field">
+              <label for="categorie" class="field__label"
+                >Catégorie <span class="field__required">*</span></label
+              >
+              <select id="categorie" name="categorie" class="field__input">
                 <option value="" selected>- Faire un choix -</option>
                 <option value="culturelle">Culture et patrimoine</option>
                 <option value="sportive">Plein air et sportif</option>
@@ -109,122 +172,260 @@
           </fieldset>
 
           <!-- Section informations sur l'activité  -->
-          <fieldset>
-            <legend>Informations sur l'activité / événement</legend>
+          <fieldset class="panel">
+            <legend class="panel__title">
+              Informations sur l'activité / événement
+            </legend>
+
             <!-- Nom du lieu -->
-            <div class="input-control">
-              <label for="nomLieu">Nom du lieu <span>*</span></label>
-              <input type="text" id="nomLieu" name="nomLieu" />
+            <div class="input-control field">
+              <label for="nomLieu" class="field__label"
+                >Nom du lieu <span class="field__required">*</span></label
+              >
+              <input type="text" id="nomLieu" name="nomLieu" class="field__input" />
               <div class="errorMessage"></div>
             </div>
 
             <!-- Adresse -->
-            <div class="input-control">
-              <label for="adresse">Adresse <span>*</span></label>
-              <input type="text" id="adresse" name="adresse" />
-              <div class="errorMessage"></div>
-            </div>
-
-            <!-- Date de l'activité -->
-            <div class="input-control">
-              <label for="dateActivite"
-                >Date de l'activité <span>*</span></label
+            <div class="input-control field">
+              <label for="adresse" class="field__label"
+                >Adresse <span class="field__required">*</span></label
               >
-              <input type="date" id="dateActivite" name="dateActivite" />
+              <input type="text" id="adresse" name="adresse" class="field__input" />
               <div class="errorMessage"></div>
             </div>
 
-            <!-- Activité gratuite -->
-            <div class="input-control">
-              <label for="gratuit"
-                >L'activité est-elle gratuite ? <span>*</span></label
-              >
-              <select id="gratuit" name="gratuit">
-                <option value="" selected>- Faire un choix -</option>
-                <option value="oui">Oui</option>
-                <option value="non">Non</option>
-              </select>
-              <div class="errorMessage"></div>
-            </div>
+            <div class="grid gap-x-4 sm:grid-cols-2">
+              <!-- Date de l'activité -->
+              <div class="input-control field">
+                <label for="dateActivite" class="field__label"
+                  >Date de l'activité <span class="field__required">*</span></label
+                >
+                <input type="date" id="dateActivite" name="dateActivite" class="field__input" />
+                <div class="errorMessage"></div>
+              </div>
 
-            <!-- Prix -->
-            <div class="input-control">
-              <label for="prix"
-                >Si non, quel est le prix de l'activité ?
-              </label>
-              <input type="number" id="prix" name="prix" placeholder="0.00$" />
-              <div class="errorMessage"></div>
-            </div>
+              <!-- Âge recommandé -->
+              <div class="input-control field">
+                <label for="ageRecommande" class="field__label"
+                  >Âge recommandé <span class="field__required">*</span></label
+                >
+                <select id="ageRecommande" name="ageRecommande" class="field__input">
+                  <option value="" selected>- Faire un choix -</option>
+                  <option value="0-5">0-5 ans</option>
+                  <option value="6-12">6-12 ans</option>
+                  <option value="13-17">13-17 ans</option>
+                  <option value="18+">18 ans et +</option>
+                </select>
+                <div class="errorMessage"></div>
+              </div>
 
-            <!-- Âge recommandé -->
-            <div class="input-control">
-              <label for="ageRecommande">Âge recommandé <span>*</span></label>
-              <select id="ageRecommande" name="ageRecommande">
-                <option value="" selected>- Faire un choix -</option>
-                <option value="0-5">0-5 ans</option>
-                <option value="6-12">6-12 ans</option>
-                <option value="13-17">13-17 ans</option>
-                <option value="18+">18 ans et +</option>
-              </select>
-              <div class="errorMessage"></div>
+              <!-- Activité gratuite -->
+              <div class="input-control field">
+                <label for="gratuit" class="field__label"
+                  >L'activité est-elle gratuite ?
+                  <span class="field__required">*</span></label
+                >
+                <select id="gratuit" name="gratuit" class="field__input">
+                  <option value="" selected>- Faire un choix -</option>
+                  <option value="oui">Oui</option>
+                  <option value="non">Non</option>
+                </select>
+                <div class="errorMessage"></div>
+              </div>
+
+              <!-- Prix -->
+              <div class="input-control field">
+                <label for="prix" class="field__label"
+                  >Si non, quel est le prix de l'activité ?
+                </label>
+                <input
+                  type="number"
+                  id="prix"
+                  name="prix"
+                  placeholder="0.00$"
+                  class="field__input"
+                />
+                <div class="errorMessage"></div>
+              </div>
             </div>
 
             <!-- Site web -->
-            <div class="input-control">
-              <label for="siteWeb">Site web (facultatif)</label>
-              <input type="url" id="siteWeb" name="siteWeb" />
+            <div class="input-control field">
+              <label for="siteWeb" class="field__label">Site web (facultatif)</label>
+              <input type="url" id="siteWeb" name="siteWeb" class="field__input" />
               <div class="errorMessage"></div>
             </div>
           </fieldset>
 
           <!-- Section du contact -->
-          <fieldset>
-            <legend>Personne à contacter</legend>
-            <!-- Prénom et nom -->
-            <div class="input-control">
-              <label for="prenomProp">Prénom du proposant <span>*</span></label>
-              <input type="text" id="prenomProp" name="prenomProp" />
-              <div class="errorMessage"></div>
-            </div>
-            <div class="input-control">
-              <label for="nomProp">Nom du proposant <span>*</span></label>
-              <input type="text" id="nomProp" name="nomProp" />
-              <div class="errorMessage"></div>
+          <fieldset class="panel">
+            <legend class="panel__title">Personne à contacter</legend>
+
+            <div class="grid gap-x-4 sm:grid-cols-2">
+              <!-- Prénom et nom -->
+              <div class="input-control field">
+                <label for="prenomProp" class="field__label"
+                  >Prénom du proposant <span class="field__required">*</span></label
+                >
+                <input type="text" id="prenomProp" name="prenomProp" class="field__input" />
+                <div class="errorMessage"></div>
+              </div>
+              <div class="input-control field">
+                <label for="nomProp" class="field__label"
+                  >Nom du proposant <span class="field__required">*</span></label
+                >
+                <input type="text" id="nomProp" name="nomProp" class="field__input" />
+                <div class="errorMessage"></div>
+              </div>
             </div>
 
             <!-- Courriel -->
-            <div class="input-control">
-              <label for="courriel">Courriel<span>*</span></label>
-              <input type="email" id="courriel" name="courriel" />
+            <div class="input-control field">
+              <label for="courriel" class="field__label"
+                >Courriel<span class="field__required">*</span></label
+              >
+              <input type="email" id="courriel" name="courriel" class="field__input" />
               <div class="errorMessage"></div>
             </div>
 
             <!-- Téléphone -->
-            <div class="input-control">
-              <label for="telephone">Téléphone (facultatif)</label>
-              <input type="tel" id="telephone" name="telephone" />
+            <div class="input-control field">
+              <label for="telephone" class="field__label">Téléphone (facultatif)</label>
+              <input type="tel" id="telephone" name="telephone" class="field__input" />
               <div class="errorMessage"></div>
             </div>
 
             <!-- Conditions d'utilisation -->
-            <div class="input-control">
-              <label for="conditions">
-                J'accepte les conditions d'utilisation <span>*</span>
+            <div class="input-control field field--checkbox">
+              <input type="checkbox" id="conditions" name="conditions" class="field__checkbox" />
+              <label for="conditions" class="field__label">
+                J'accepte les conditions d'utilisation
+                <span class="field__required">*</span>
               </label>
-              <input type="checkbox" id="conditions" name="conditions" />
               <div class="errorMessage"></div>
             </div>
           </fieldset>
 
           <!-- Bouton de soumission -->
-          <input type="submit" value="Soumettre" />
+          <input type="submit" value="Soumettre" class="btn btn--primary" />
         </form>
       </section>
 
       <!-- Informations supplémentaires / FAQ -->
-      <section></section>
+      <section class="pb-16">
+        <h2 class="mb-6 text-2xl font-semibold text-teal-900">Questions fréquentes</h2>
+
+        <div class="divide-y divide-slate-200">
+          <!-- Question 1 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Comment proposer une activité ou un événement ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Il suffit de remplir le formulaire ci-dessus avec les informations
+              demandées (nom, description, lieu, date, etc.), puis de cliquer
+              sur « Soumettre ». Notre équipe examinera ensuite votre
+              proposition avant de l'ajouter au site.
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Combien de temps faut-il pour que ma proposition soit acceptée ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Le délai de vérification varie selon le volume de demandes, mais
+              compte généralement entre 3 et 5 jours ouvrables avant que votre
+              proposition soit publiée ou que nous vous contactions pour plus de
+              détails.
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Est-ce que je peux proposer une activité payante ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Oui. Si l'activité ou l'événement n'est pas gratuit, indiquez-le
+              simplement dans le formulaire et précisez le prix approximatif
+              dans le champ prévu à cet effet.
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Puis-je modifier ma proposition après l'avoir soumise ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Si vous souhaitez apporter une correction ou un ajout après
+              l'envoi du formulaire, vous pouvez nous contacter directement par
+              courriel en mentionnant le nom de l'activité proposée.
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Dois-je être le propriétaire du lieu ou de l'événement pour le
+              proposer ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Non. Vous pouvez proposer n'importe quelle activité, endroit ou
+              événement public que vous jugez intéressant pour la communauté,
+              même si vous n'en êtes pas l'organisateur.
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div
+            class="collapse collapse-arrow py-1"
+          >
+            <input type="radio" name="faq-accordion" />
+            <div class="collapse-title font-semibold text-teal-900">
+              Que se passe-t-il si ma proposition n'est pas acceptée ?
+            </div>
+            <div class="collapse-content text-sm text-slate-700">
+              Si une proposition ne peut pas être ajoutée (informations
+              incomplètes, contenu non conforme, doublon, etc.), nous vous
+              contacterons par courriel afin de vous expliquer la raison et, si
+              possible, vous inviter à la soumettre à nouveau.
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer class="mt-8 bg-teal-900">
+      <div
+        class="container flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold text-white">TRouvé</p>
+          <p class="text-sm text-teal-50/80">
+            Découvrez ce qui se passe à Trois-Rivières.
+          </p>
+        </div>
+        <p class="text-sm text-teal-50/70">© 2026 TRouvé. Tous droits réservés.</p>
+      </div>
+    </footer>
   </body>
 </html>

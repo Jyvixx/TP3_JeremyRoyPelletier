@@ -12,29 +12,115 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
-    <header>
-      <nav>
+  <body class="flex min-h-screen flex-col bg-teal-50/40">
+    <header class="bg-teal-900">
+      <nav
+        class="container flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
-          <a href="index.html"><h1>TRouvé</h1></a>
+          <a href="index.html" class="inline-block no-underline">
+            <h1 class="text-2xl font-semibold tracking-tight text-white">
+              TRouvé
+            </h1>
+          </a>
         </div>
         <div>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="activites.html">Activités</a></li>
-            <li><a href="evenements.html">Événements</a></li>
-            <li><a href="proposer.html">Proposer</a></li>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 font-medium">
+            <li>
+              <a
+                href="index.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="activites.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Activités</a
+              >
+            </li>
+            <li>
+              <a
+                href="evenements.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Événements</a
+              >
+            </li>
+            <li>
+              <a
+                href="proposer.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Proposer</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <main class="container">
-      <h2>Félicitations formulaire soumis avec succès</h2>
-      <button><a href="index.html">Retour à l'accueil</a></button>
-      <button><a href="proposer.html">Soumettre une autre activité</a></button>
+    <main
+      id="main"
+      class="container flex flex-1 flex-col items-center justify-center py-12 text-center sm:py-20"
+    >
+      <div class="max-w-md">
+        <svg
+          viewBox="0 0 48 48"
+          class="mx-auto h-14 w-14 text-amber-500"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="24"
+            cy="24"
+            r="22"
+            stroke="currentColor"
+            stroke-width="3"
+          />
+          <path
+            d="M14 24l7 7 13-14"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        <h2 class="mt-6 text-2xl font-semibold text-teal-900 sm:text-3xl">
+          Formulaire soumis avec succès !
+        </h2>
+        <p class="mt-4 leading-relaxed text-slate-700">
+          Merci d'avoir proposé une activité à la communauté TRouvé. Notre
+          équipe l'examinera sous peu.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <a href="index.html" class="btn btn--secondary">Retour à l'accueil</a>
+          <a href="proposer.html" class="btn btn--primary"
+            >Soumettre une autre activité</a
+          >
+        </div>
+      </div>
     </main>
+
+    <footer class="bg-teal-900">
+      <div
+        class="container flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold text-white">TRouvé</p>
+          <p class="text-sm text-teal-50/80">
+            Découvrez ce qui se passe à Trois-Rivières.
+          </p>
+        </div>
+        <p class="text-sm text-teal-50/70">
+          © 2026 TRouvé. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

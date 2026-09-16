@@ -12,134 +12,368 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
-    <header>
-      <nav>
+  <body class="bg-teal-50/40">
+    <header class="bg-teal-900">
+      <nav
+        class="container flex flex-col gap-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+      >
         <div>
-          <a href="index.html"><h1>TRouvé</h1></a>
+          <a href="index.html" class="inline-block no-underline">
+            <h1 class="text-2xl font-semibold tracking-tight text-white">
+              TRouvé
+            </h1>
+          </a>
         </div>
         <div>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="activites.html">Activités</a></li>
-            <li><a href="evenements.html">Événements</a></li>
-            <li><a href="proposer.html">Proposer</a></li>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 font-medium">
+            <li>
+              <a
+                href="index.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="activites.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Activités</a
+              >
+            </li>
+            <li>
+              <a
+                href="evenements.html"
+                aria-current="page"
+                class="site-header__link site-header__link--active text-white"
+                >Événements</a
+              >
+            </li>
+            <li>
+              <a
+                href="proposer.html"
+                class="site-header__link text-teal-50/90 hover:text-white"
+                >Proposer</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!-- Événement vedette -->
-    <main class="container">
-      <section>
-        <h2>Événement vedette</h2>
-        <h3>Martin Fontaine - Sur la route de Memphis</h3>
-        <img
-          src="assets/Martin-fontaine-Le-Memphis.jpg"
-          alt="Martin Fontaine jouant de la guitare sur scène"
-        />
-        <p>
-          Présenté au Memphis Cabaret jusqu'au 19 septembre 2026, dans cette
-          formule souper-spectacle intime et animée, Martin Fontaine délaisse
-          les perruques et le maquillage pour vous entraîner dans un grand
-          voyage musical au cœur du Rock & Soul, du Blues et du Rock 'n' Roll
-          des années 50 à 80, rendant notamment hommage au répertoire d'Elvis
-          Presley et de Ray Charles.
+    <main id="main" class="container">
+      <!-- Événement vedette -->
+      <section class="py-12 sm:py-16">
+        <p class="text-sm font-semibold uppercase tracking-wide text-amber-600">
+          Événement vedette
         </p>
+        <h2
+          class="mt-2 max-w-2xl text-3xl font-semibold text-teal-900 sm:text-4xl"
+        >
+          Martin Fontaine - Sur la route de Memphis
+        </h2>
+
+        <div class="mt-8 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <img
+            src="assets/Martin-fontaine-Le-Memphis.jpg"
+            alt="Martin Fontaine jouant de la guitare sur scène"
+            class="aspect-video w-full rounded-lg object-cover shadow-md lg:aspect-[4/3]"
+          />
+          <p class="leading-relaxed text-slate-700">
+            Présenté au Memphis Cabaret jusqu'au 19 septembre 2026, dans cette
+            formule souper-spectacle intime et animée, Martin Fontaine délaisse
+            les perruques et le maquillage pour vous entraîner dans un grand
+            voyage musical au cœur du Rock &amp; Soul, du Blues et du Rock 'n'
+            Roll des années 50 à 80, rendant notamment hommage au répertoire
+            d'Elvis Presley et de Ray Charles.
+          </p>
+        </div>
       </section>
 
+      <div class="text-teal-900/10" aria-hidden="true">
+        <svg
+          viewBox="0 0 1200 60"
+          class="wave-divider"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
+
       <!-- Événements à venir -->
-      <section>
-        <h2>Événements à venir</h2>
-        <ul>
-          <li>
-            <h3>Festival de la galette et des saveurs du terroir</h3>
-            Se déroule le 19 et 20 septembre 2026 au cœur du
-            Vieux-Saint-Eustache Un événement culinaire mettant en valeur les
-            produits locaux et les talents gastronomiques de la région.
+      <section class="py-12">
+        <h2 class="mb-8 text-2xl font-semibold text-teal-900">
+          Événements à venir
+        </h2>
+
+        <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/MYCO.jpg"
+              alt="MYCO : Rendez-vous de la gastronomie forestière"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                MYCO : Rendez-vous de la gastronomie forestière
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-700">
+                De fin août ou début septembre jusqu'au 12 octobre 2026, des
+                excursions et des séjours permettent de combiner la chasse, la
+                pêche et l'initiation à la cueillette responsable de champignons
+                avec des guides mycologues.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Festival international de la poésie</h3>
-            Du 2 au 11 octobre 2026 est un rassemblement d'auteurs, poètes et
-            amateurs de poésie pour célébrer l'art de l'écriture.
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/SEO_FIPTR.jpg"
+              alt="Logo du festival international de la poésie"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Festival international de la poésie
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-700">
+                Du 2 au 11 octobre 2026, un rassemblement d'auteurs, poètes et
+                amateurs de poésie pour célébrer l'art de l'écriture.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Les Délices d'automne</h3>
-            Du 9 au 12 octobre 2026, cet événement met en avant les saveurs de
-            l'automne à travers des dégustations.
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/Delicesdautomne-foule.jpg"
+              alt="Une foule au délices d'automne"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Les Délices d'automne
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-700">
+                Du 9 au 12 octobre 2026, cet événement met en avant les saveurs
+                de l'automne à travers des dégustations.
+              </p>
+            </div>
           </li>
         </ul>
       </section>
 
-      <!-- Calendrier (sous forme de cartes)-->
-      <section>
-        <h2>Calendrier des événements</h2>
-        <ul>
-          <li>
-            <h3>
-              Le Grand Événement Albatros (Bruno Pelletier & Mélissa Bédard)
-            </h3>
-            <p>Date : Mercredi 16 septembre 2026 à 20 h</p>
-            <p>Lieu :Amphithéâtre Cogeco</p>
-            <p>
-              Description : Spectacle-bénéfice unique réunissant deux des plus
-              grandes voix du Québec au profit de la Fondation Albatros.
-            </p>
+      <!-- Calendrier des événements -->
+      <section class="pb-16">
+        <h2 class="mb-8 text-2xl font-semibold text-teal-900">
+          Calendrier des événements
+        </h2>
+
+        <ul class="grid gap-6 sm:grid-cols-2">
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/albatros26_fiche-spectacle.jpg"
+              alt="Fiche du Grand Événement Albatros"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Le Grand Événement Albatros (Bruno Pelletier &amp; Mélissa
+                Bédard)
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Mercredi 16 septembre 2026 à 20 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Amphithéâtre Cogeco</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Spectacle-bénéfice unique réunissant deux des plus grandes voix
+                du Québec au profit de la Fondation Albatros.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Party de la rentrée des Lions</h3>
-            <p>Date : Samedi 26 septembre 2026 de 10 h à 14 h</p>
-            <p>Lieu : Stationnement du Colisée Vidéotron</p>
-            <p>
-              Description : Événement familial gratuit pour lancer la saison de
-              hockey avec parcours ninja, jeux gonflables et séance de
-              signatures avec les joueurs.
-            </p>
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/pink-floyd.jpg"
+              alt="The Australian Pink Floyd Show"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                The Australian Pink Floyd Show
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>20 septembre 2026</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Amphithéâtre Cogeco</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Happiest Days of Our Lives Tour, couvrant toutes les époques de
+                Pink Floyd avec une attention particulière pour le respect de
+                l'œuvre originale (Barrett, Waters, Gilmour, Wright et Mason)
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Les Délices d'automne</h3>
-            <p>Date : Du 9 au 12 octobre 2026</p>
-            <p>Lieu :Amphithéâtre Cogeco</p>
-            <p>
-              Description : Le rendez-vous gourmand de la région avec plus de 80
-              exposants et 50 activités culinaires, dégustations et ateliers.
-            </p>
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/lions-de-trois-rivieres.jpg"
+              alt="Logo des Lions de Trois-Rivières"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Party de la rentrée des Lions
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Samedi 26 septembre 2026 de 10 h à 14 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Stationnement du Colisée Vidéotron</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Événement familial gratuit pour lancer la saison de hockey avec
+                parcours ninja, jeux gonflables et séance de signatures avec les
+                joueurs.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Soirée POP à l'époque de la prohibition</h3>
-            <p>Date : Jeudi 22 octobre 2026 dès 17 h</p>
-            <p>Lieu : Musée POP</p>
-            <p>
-              Description : Soirée-bénéfice immersive sur le thème des années
-              1920 à Trois-Rivières.
-            </p>
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/soiree-pop.jpg"
+              alt="Soirée POP à l'époque de la prohibition"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Soirée POP à l'époque de la prohibition
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Jeudi 22 octobre 2026 dès 17 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Musée POP</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Soirée-bénéfice immersive sur le thème des années 1920 à
+                Trois-Rivières.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Grand Prix canin de Trois-Rivières</h3>
-            <p>Date : Vendredi 30 octobre 2026</p>
-            <p>Lieu : Parc Masse</p>
-            <p>
-              Description : Compétitions de sports canins (canicross,
-              bikejoring). Inclus également une soirée de voisinage thématique
-              d'Halloween le 31 octobre.
-            </p>
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/grand-prix-canin-trois-rivieres.jpg"
+              alt="Chiens courant au Grand Prix canin de Trois-Rivières"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">
+                Grand Prix canin de Trois-Rivières
+              </h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Vendredi 30 octobre 2026</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Parc Masse</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                Compétitions de sports canins (canicross, bikejoring). Inclut
+                également une soirée de voisinage thématique d'Halloween le 31
+                octobre.
+              </p>
+            </div>
           </li>
-          <li>
-            <h3>Alicia Moffet</h3>
-            <p>Date : Jeudi 19 novembre 2026 à 20 h</p>
-            <p>Lieu : Cabaret de l'Amphithéâtre Cogeco</p>
-            <p>
-              Description : La chanteuse pop québécoise Alicia Moffet présentera
-              son tout nouveau spectacle dans une ambiance intime et
-              chaleureuse.
-            </p>
+
+          <li
+            class="overflow-hidden rounded-lg border border-teal-900/10 bg-white shadow-sm"
+          >
+            <img
+              src="assets/moffet26_fiche-spectacle.jpg"
+              alt="Fiche de spectacle d'Alicia Moffet"
+              class="aspect-video w-full object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-teal-900">Alicia Moffet</h3>
+              <dl class="mt-3 space-y-1 text-sm text-slate-700">
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Date :</dt>
+                  <dd>Jeudi 19 novembre 2026 à 20 h</dd>
+                </div>
+                <div class="flex gap-2">
+                  <dt class="font-medium text-teal-700">Lieu :</dt>
+                  <dd>Cabaret de l'Amphithéâtre Cogeco</dd>
+                </div>
+              </dl>
+              <p class="mt-3 text-sm leading-relaxed text-slate-700">
+                La chanteuse pop québécoise Alicia Moffet présentera son tout
+                nouveau spectacle dans une ambiance intime et chaleureuse.
+              </p>
+            </div>
           </li>
         </ul>
       </section>
     </main>
 
-    <footer></footer>
+    <footer class="mt-8 bg-teal-900">
+      <div
+        class="container flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <p class="text-lg font-semibold text-white">TRouvé</p>
+          <p class="text-sm text-teal-50/80">
+            Découvrez ce qui se passe à Trois-Rivières.
+          </p>
+        </div>
+        <p class="text-sm text-teal-50/70">
+          © 2026 TRouvé. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -3,11 +3,38 @@
 }
 
 
+/* Variables de palette (TRouvé)
+========================================================================== */
+
+:root {
+	--tr-teal-900: #134e4a;
+	--tr-teal-700: #0f766e;
+	--tr-teal-500: #14b8a6;
+	--tr-amber-500: #f59e0b;
+	--tr-amber-600: #d98a08;
+	--tr-cream-100: #f6f4ef;
+	--tr-ink-900: #1f2a2e;
+	--tr-success-500: #09c372;
+	--tr-error-500: #ff3860;
+	--tr-border-100: #d7dfdb;
+}
+
+
 /* Typographies / Couleurs (exemples : titres, paragraphes, liens, etc.)
+   Polices web-safe uniquement (aucune police externe chargée).
 ========================================================================== */
 
 body {
-	background-color: aliceblue;
+	background-color: var(--tr-cream-100);
+	color: var(--tr-ink-900);
+	font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+legend {
+	font-family: "Merriweather", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 /* Mise en page (positionnement)
@@ -20,31 +47,184 @@ body {
 }
 
 
-/* Header / Navigations / Footer 
+/* Header / Navigations / Footer
+   Bloc BEM : site-header
 ========================================================================== */
 
+.site-header__link {
+	position: relative;
+	text-decoration: none;
+}
+
+.site-header__link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 100%;
+	bottom: -4px;
+	height: 2px;
+	background-color: var(--tr-amber-500);
+	transition: right 0.2s ease;
+}
+
+.site-header__link:hover::after,
+.site-header__link--active::after {
+	right: 0;
+}
 
 
-/* Composantes générales (exemples : section, cartes, tableaux, etc.)
+/* Composantes générales
+   Bloc BEM : wave-divider
 ========================================================================== */
 
+.wave-divider {
+	display: block;
+	width: 100%;
+	height: auto;
+}
 
 
 /* Formulaires
+   Blocs BEM : panel, field, btn
+   (styles répétés sur beaucoup de balises -> factorisés ici plutôt
+   que répétés en classes utilitaires sur chaque champ)
+   .panel est réutilisé pour les fieldsets du formulaire ET pour
+   encadrer la section FAQ plus bas, afin que les deux zones aient
+   la même présence visuelle sur la page.
 ========================================================================== */
 
-.input-control.success input {
-	border-color: #09c372;
+.panel {
+	margin: 0 0 2.5rem;
+	padding: 0 0 2rem;
+	border: none;
+	border-bottom: 1px solid var(--tr-border-100);
 }
 
-.input-control.error input {
-	border-color: #ff3860;
+.panel:last-child {
+	border-bottom: none;
+}
+
+.panel__title {
+	padding: 0;
+	margin-bottom: 0.75rem;
+	display: block;
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: var(--tr-teal-900);
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.375rem;
+	margin-top: 1rem;
+	min-width: 0;
+}
+
+.field--checkbox {
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.field--checkbox .errorMessage {
+	flex-basis: 100%;
+}
+
+.field__label {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--tr-ink-900);
+}
+
+.field__required {
+	color: var(--tr-amber-600);
+}
+
+.field__input {
+	width: 100%;
+	max-width: 100%;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--tr-border-100);
+	border-radius: 0.375rem;
+	color: var(--tr-ink-900);
+	background-color: #ffffff;
+	font: inherit;
+}
+
+.field__input:focus {
+	outline: none;
+	border-color: var(--tr-teal-700);
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.25);
+}
+
+.field__checkbox {
+	margin-top: 0.15rem;
+	width: 1rem;
+	height: 1rem;
+	accent-color: var(--tr-teal-700);
+}
+
+.input-control.success .field__input {
+	border-color: var(--tr-success-500);
+}
+
+.input-control.error .field__input {
+	border-color: var(--tr-error-500);
 }
 
 .input-control .errorMessage {
-	color: #ff3860;
+	color: var(--tr-error-500);
 	font-size: 0.8rem;
 	margin-bottom: 15px;
+}
+
+.btn {
+	display: block;
+	width: 100%;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.375rem;
+	font-weight: 600;
+	font-size: 1rem;
+	font-family: inherit;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (min-width: 640px) {
+	.btn {
+		display: inline-block;
+		width: auto;
+	}
+}
+
+.btn--primary {
+	background-color: var(--tr-amber-500);
+	color: var(--tr-teal-900);
+}
+
+.btn--primary:hover {
+	background-color: var(--tr-amber-600);
+}
+
+.btn--secondary {
+	background-color: transparent;
+	color: var(--tr-teal-700);
+	border-color: var(--tr-teal-700);
+}
+
+.btn--secondary:hover {
+	background-color: var(--tr-teal-700);
+	color: #ffffff;
+}
+
+.btn:focus-visible {
+	outline: 2px solid var(--tr-teal-700);
+	outline-offset: 2px;
 }
 
 /* Règles spécifiques aux pages
