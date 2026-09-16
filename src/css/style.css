@@ -1,17 +1,19 @@
-*{ box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+}
 
 
 /* Typographies / Couleurs (exemples : titres, paragraphes, liens, etc.)
 ========================================================================== */
 
-body{
+body {
 	background-color: aliceblue;
 }
 
 /* Mise en page (positionnement)
 ========================================================================== */
 
-.container{
+.container {
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -31,7 +33,19 @@ body{
 /* Formulaires
 ========================================================================== */
 
+.input-control.success input {
+	border-color: #09c372;
+}
 
+.input-control.error input {
+	border-color: #ff3860;
+}
+
+.input-control .errorMessage {
+	color: #ff3860;
+	font-size: 0.8rem;
+	margin-bottom: 15px;
+}
 
 /* Règles spécifiques aux pages
 ========================================================================== */
